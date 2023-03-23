@@ -9,15 +9,24 @@ buildscript {
         //classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
-allprojects {
+pluginManagement {
     repositories {
         google()
-        maven { url "https://jitpack.io" }
         mavenCentral()
+        gradlePluginPortal()
+        jcenter()
     }
 }
-task clean(type: Delete) {
-    delete rootProject.buildDir
+dependencyResolutionManagement {
+    repositoriesMode.set(RepositoriesMode.FAIL_ON_PROJECT_REPOS)
+    repositories {
+        google()
+        mavenCentral()
+     //  gradPluginPortal()
+     maven { url "https://jitpack.io" }
+        jcenter()
+    }
 }
+rootProject.name = "Android_SDK"
+//include ':app'
 include ':wigzo_android_sdk'
-
