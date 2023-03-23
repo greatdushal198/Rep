@@ -10,13 +10,16 @@ buildscript {
         //classpath "org.jetbrains.kotlin:kotlin-gradle-plugin:$kotlin_version"
     }
 }
-
+apply plugin: 'maven-publish'
 allprojects {
     repositories {
         google()
         maven { url "https://jitpack.io" }
         mavenCentral()
     }
+}
+configurations.all {
+    resolutionStrategy.cacheChangingModulesFor 0, 'seconds'
 }
 
 task clean(type: Delete) {
