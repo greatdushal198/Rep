@@ -1,1 +1,2 @@
 include ':wigzo_android_sdk'
+include ':app'
