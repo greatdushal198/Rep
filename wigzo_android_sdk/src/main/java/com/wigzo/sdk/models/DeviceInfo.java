@@ -20,7 +20,7 @@ public class DeviceInfo extends Model {
     public DeviceInfo() {
         this.device = android.os.Build.MODEL;
         this.os = "Android";
-        this.osVersion = android.os.Build.VERSION.RELEASE;;
+        this.osVersion = android.os.Build.VERSION.RELEASE;
         this.ipAddress = com.wigzo.sdk.helpers.Device.fetchIpAddress();
         this.appVersion = com.wigzo.sdk.helpers.Device.fetchAppVersion();
         this.location = new Location();

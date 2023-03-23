@@ -103,7 +103,7 @@ public class InAppMessageHandler {
     }
 
     public InAppMessageHandler setOnDismissContext(Context context) {
-        if (!InAppMessageHandler.OnDismissListener.class.isInstance(context)) {
+        if (!(context instanceof OnDismissListener)) {
             throw new RuntimeException("dismissListenerContext should be an instance of interface InAppMessageHandler.OnDismissListener");
         }
         this.dismissListenerContext = (OnDismissListener) context;
@@ -111,7 +111,7 @@ public class InAppMessageHandler {
     }
 
     public InAppMessageHandler setOnCancelContext(Context context) {
-        if (!InAppMessageHandler.OnCancelListener.class.isInstance(context)) {
+        if (!(context instanceof OnCancelListener)) {
             throw new RuntimeException("cancelListenerContext should be an instance of interface InAppMessageHandler.OnCancelListener");
         }
         this.cancelListenerContext = (OnCancelListener) context;

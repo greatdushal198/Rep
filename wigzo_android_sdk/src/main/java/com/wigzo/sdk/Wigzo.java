@@ -17,7 +17,7 @@ import java.util.UUID;
 
 public class Wigzo {
     private static WigzoSharedStorage wigzoSharedStorage;
-    private static List tasks = Collections.synchronizedList(new ArrayList<Task>());
+    private static final List tasks = Collections.synchronizedList(new ArrayList<Task>());
 
     private static void initializeWigzoSharedStorage (Context context) {
         wigzoSharedStorage = new WigzoSharedStorage(WigzoApplication.getAppContext());

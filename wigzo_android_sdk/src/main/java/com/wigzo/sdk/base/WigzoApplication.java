@@ -10,7 +10,7 @@ public class WigzoApplication extends Application {
     public static LooperThread mainLooperThread;
 
     public void onCreate() {
-        this.context = getApplicationContext();
+        context = getApplicationContext();
         mainLooperThread = new LooperThread();
         mainLooperThread.start();
         super.onCreate();

@@ -38,11 +38,11 @@ public class WigzoDialogTemplate extends Dialog implements View.OnClickListener 
     private String body = "";
     private String title = "";
     private String layoutIdStr = "001";
-    private JSONObject payload;
+    private final JSONObject payload;
     private int layoutId = 0;
     private boolean hasImageView = false;
     private WigzoLayoutProperties wigzoLayoutProperties;
-    private Map<String, String> remoteMessageData;
+    private final Map<String, String> remoteMessageData;
 
     private Class<? extends AppCompatActivity> positiveResponseTargetActivity = null;
     private Class<? extends AppCompatActivity> negativeResponseTargetActivity = null;
@@ -94,7 +94,7 @@ public class WigzoDialogTemplate extends Dialog implements View.OnClickListener 
         hasImageView = wigzoLayoutProperties.hasImage;
 
         if (hasImageView) {
-            notification_image = (ImageView) findViewById(R.id.notification_image);
+            notification_image = findViewById(R.id.notification_image);
         }
 
         if (null != remotePicture && hasImageView) {
@@ -102,11 +102,11 @@ public class WigzoDialogTemplate extends Dialog implements View.OnClickListener 
                 notification_image.setImageBitmap(remotePicture);
         }
 
-        yes = (Button) findViewById(R.id.btn_yes);
-        no = (Button) findViewById(R.id.btn_no);
+        yes = findViewById(R.id.btn_yes);
+        no = findViewById(R.id.btn_no);
 
-        notification_title = (TextView) findViewById(R.id.notification_title);
-        notification_body = (TextView) findViewById(R.id.notification_body);
+        notification_title = findViewById(R.id.notification_title);
+        notification_body = findViewById(R.id.notification_body);
 
         notification_title.setText(title);
         notification_body.setText(body);

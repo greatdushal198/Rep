@@ -16,6 +16,7 @@ import java.io.PrintWriter;
 import java.net.HttpURLConnection;
 import java.net.URL;
 import java.net.URLConnection;
+import java.nio.charset.StandardCharsets;
 
 @Keep
 public class ConnectionStream {
@@ -55,7 +56,7 @@ public class ConnectionStream {
             connection.setRequestProperty("Content-Type", "application/json");
             connection.setRequestProperty("charset", "utf-8");
             outputStream = connection.getOutputStream();
-            writer = new BufferedWriter(new OutputStreamWriter(outputStream, "UTF-8"));
+            writer = new BufferedWriter(new OutputStreamWriter(outputStream, StandardCharsets.UTF_8));
             writer.write(data);
             writer.flush();
             final int responseCode = connection.getResponseCode();

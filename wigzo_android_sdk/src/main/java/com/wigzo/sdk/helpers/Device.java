@@ -30,7 +30,7 @@ public class Device {
                 for (Enumeration<InetAddress> enumIpAddr = intf.getInetAddresses(); enumIpAddr.hasMoreElements();) {
                     InetAddress inetAddress = enumIpAddr.nextElement();
                     if (!inetAddress.isLoopbackAddress()) {
-                        ipAddress = inetAddress.getHostAddress().toString();
+                        ipAddress = inetAddress.getHostAddress();
                     }
                 }
             }
@@ -84,7 +84,7 @@ public class Device {
                     //Save device location
                     Wigzo.getSharedStorage()
                             .edit()
-                            .putString(Configuration.DEVICE_LOCATION_KEY.value, response.toString())
+                            .putString(Configuration.DEVICE_LOCATION_KEY.value, response)
                             .apply();
                 }
                 return response;
